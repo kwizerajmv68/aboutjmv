@@ -1,0 +1,41 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Public collections (Read by all, Write by Admin)
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    
+    match /pages/{docId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    
+    match /videos/{docId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    
+    match /graphics/{docId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+    
+    match /scriptures/{docId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // Bookings (Write by all, Read/Write by Admin)
+    match /bookings/{docId} {
+      allow create: if true;
+      allow read, update, delete: if isAuthenticated();
+    }
+  }
+}
