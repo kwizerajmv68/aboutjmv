@@ -55,22 +55,22 @@ const Footer = () => {
           <h3>SOCIAL ACCOUNTS</h3>
           <div className="social-links">
             <a href={settings.socials.instagram} className="social-icon" title="Instagram">
-              <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" />
             </a>
             <a href={settings.socials.tiktok} className="social-icon" title="TikTok">
-              <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/tiktok.svg" alt="TikTok" />
             </a>
             <a href={settings.socials.x} className="social-icon" title="X (Twitter)">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X" />
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/x.svg" alt="X" />
             </a>
             <a href={settings.socials.youtube} className="social-icon" title="YouTube">
-              <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/youtube.svg" alt="YouTube" />
             </a>
             <a href={settings.socials.email} className="social-icon" title="Email">
-              <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" alt="Email" />
             </a>
             <a href={settings.socials.whatsapp} className="social-icon" title="WhatsApp">
-              <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" />
             </a>
           </div>
         </div>
