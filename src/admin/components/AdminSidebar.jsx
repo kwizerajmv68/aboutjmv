@@ -1,10 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const AdminSidebar = () => {
+const AdminSidebar = ({ isOpen, setIsOpen }) => {
   return (
-    <aside className="sidebar">
-      <div className="sidebar-logo">JMV ADMIN</div>
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className="sidebar-header">
+        <div className="sidebar-logo">JMV ADMIN</div>
+        <button className="sidebar-close" onClick={() => setIsOpen(false)}>✕</button>
+      </div>
       <nav className="sidebar-nav">
         <NavLink to="/dashboard" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
           DASHBOARD

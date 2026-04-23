@@ -17,6 +17,7 @@ import './styles/admin.css';
 const AdminApp = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -39,6 +40,11 @@ const AdminApp = () => {
     return () => unsubscribe();
   }, [navigate, location.pathname]);
 
+  // Close sidebar on navigation (mobile)
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location.pathname]);
+
   if (loading) {
     return <div className="admin-loading">Loading Admin...</div>;
   }
@@ -49,10 +55,10 @@ const AdminApp = () => {
   }
 
   return (
-    <div className="admin-container">
-      <AdminSidebar />
+    <div className={`admin-container ${sidebarOpen ? 'sidebar-open' : ''}`}>
+      <AdminSidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
       <div className="admin-main">
-        <AdminNavbar user={user} />
+        <AdminNavbar user={user} toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
         <div className="admin-content">
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
@@ -67,6 +73,8 @@ const AdminApp = () => {
           </Routes>
         </div>
       </div>
+      {/* Overlay for mobile */}
+      {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)}></div>}
     </div>
   );
 };

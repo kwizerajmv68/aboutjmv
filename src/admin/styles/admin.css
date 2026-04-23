@@ -24,15 +24,32 @@
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 0;
+  transition: transform 0.3s ease;
+  z-index: 1100;
+}
+
+.sidebar-header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .sidebar-logo {
-  padding: 0 2rem;
   font-size: 1.2rem;
   font-weight: 800;
-  margin-bottom: 3rem;
   color: var(--primary);
+  letter-spacing: 2px;
+}
+
+.sidebar-close {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .sidebar-nav {
@@ -61,9 +78,24 @@
   color: #ffffff;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.sidebar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-toggle .bar {
+  width: 20px;
+  height: 2px;
+  background: var(--primary);
 }
 
 .user-info {
@@ -208,8 +240,66 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
-.social-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+@media (max-width: 992px) {
+  .sidebar {
+    position: fixed;
+    height: 100vh;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: block;
+  }
+
+  .sidebar-toggle {
+    display: flex;
+  }
+
+  .admin-main {
+    width: 100%;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .user-email {
+    display: none;
+  }
+  
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1050;
+  }
+
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .admin-content {
+    padding: 1.5rem;
+  }
+  
+  .admin-navbar {
+    padding: 1rem;
+  }
+
+  .login-card {
+    padding: 2rem;
+  }
 }
