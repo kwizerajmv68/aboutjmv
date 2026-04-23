@@ -1,41 +1,41 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Helper to check if user is authenticated
-    function isAuthenticated() {
+    // Helper function to check if the user is logged in
+    function isAdmin() {
       return request.auth != null;
     }
 
-    // Public collections (Read by all, Write by Admin)
-    match /settings/{docId} {
+    // Publicly readable content: Settings, Pages, and Portfolio items
+    match /settings/{document=**} {
       allow read: if true;
-      allow write: if isAuthenticated();
+      allow write: if isAdmin();
     }
     
-    match /pages/{docId} {
+    match /pages/{document=**} {
       allow read: if true;
-      allow write: if isAuthenticated();
+      allow write: if isAdmin();
     }
     
-    match /videos/{docId} {
+    match /videos/{document=**} {
       allow read: if true;
-      allow write: if isAuthenticated();
+      allow write: if isAdmin();
     }
     
-    match /graphics/{docId} {
+    match /graphics/{document=**} {
       allow read: if true;
-      allow write: if isAuthenticated();
+      allow write: if isAdmin();
     }
     
-    match /scriptures/{docId} {
+    match /scriptures/{document=**} {
       allow read: if true;
-      allow write: if isAuthenticated();
+      allow write: if isAdmin();
     }
 
-    // Bookings (Write by all, Read/Write by Admin)
-    match /bookings/{docId} {
+    // Bookings: Anyone can submit a booking, but only Admin can see or edit them
+    match /bookings/{bookingId} {
       allow create: if true;
-      allow read, update, delete: if isAuthenticated();
+      allow read, update, delete: if isAdmin();
     }
   }
 }
