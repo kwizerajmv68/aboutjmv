@@ -43,11 +43,10 @@ const AdminApp = () => {
     return <div className="admin-loading">Loading Admin...</div>;
   }
 
-  if (!user && location.pathname === '/admin/login') {
+  // If not logged in, any /admin route shows Login
+  if (!user) {
     return <Login />;
   }
-
-  if (!user) return null;
 
   return (
     <div className="admin-container">
