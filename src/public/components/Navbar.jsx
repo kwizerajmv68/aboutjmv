@@ -12,14 +12,18 @@ const Navbar = () => {
       
       {/* Mobile Toggle */}
       <button 
-        className="mobile-menu-btn" 
+        className={`more-btn ${isOpen ? 'active' : ''}`} 
         onClick={() => setIsOpen(!isOpen)}
-        style={{display:'none'}} // Styled in CSS
+        aria-label="Toggle navigation"
       >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
+        <div className="more-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span className="more-label">{isOpen ? 'CLOSE' : 'MORE'}</span>
       </button>
+
 
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
         <NavLink to="/" onClick={() => setIsOpen(false)} className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>HOME</NavLink>
