@@ -1,14 +1,8 @@
 import React from 'react';
+import AdminSharedList from '../components/AdminSharedList';
 
 const ManageVideos = () => {
-  return (
-    <div className="manage-page">
-      <h1>Manage Videos</h1>
-      <div className="stat-card" style={{marginTop:'2rem'}}>
-        <p>List of videos will appear here.</p>
-      </div>
-    </div>
-  );
+  return <AdminSharedList collectionName="videos" title="Videos" />;
 };
 
 export default ManageVideos;

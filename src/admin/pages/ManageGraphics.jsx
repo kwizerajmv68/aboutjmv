@@ -1,14 +1,8 @@
 import React from 'react';
+import AdminSharedList from '../components/AdminSharedList';
 
 const ManageGraphics = () => {
-  return (
-    <div className="manage-page">
-      <h1>Manage Graphics</h1>
-      <div className="stat-card" style={{marginTop:'2rem'}}>
-        <p>List of graphics will appear here.</p>
-      </div>
-    </div>
-  );
+  return <AdminSharedList collectionName="graphics" title="Graphics" />;
 };
 
 export default ManageGraphics;

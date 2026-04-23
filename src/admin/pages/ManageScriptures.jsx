@@ -1,14 +1,8 @@
 import React from 'react';
+import AdminSharedList from '../components/AdminSharedList';
 
 const ManageScriptures = () => {
-  return (
-    <div className="manage-page">
-      <h1>Manage Scriptures</h1>
-      <div className="stat-card" style={{marginTop:'2rem'}}>
-        <p>List of scriptures will appear here.</p>
-      </div>
-    </div>
-  );
+  return <AdminSharedList collectionName="scriptures" title="Scriptures" />;
 };
 
 export default ManageScriptures;
