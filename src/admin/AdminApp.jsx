@@ -26,13 +26,13 @@ const AdminApp = () => {
       setLoading(false);
       
       // Redirect to login if not authenticated and not on login page
-      if (!currentUser && location.pathname !== '/admin/login') {
-        navigate('/admin/login');
+      if (!currentUser && location.pathname !== '/login') {
+        navigate('/login');
       }
       
       // Redirect to dashboard if authenticated and on login page
-      if (currentUser && location.pathname === '/admin/login') {
-        navigate('/admin/dashboard');
+      if (currentUser && location.pathname === '/login') {
+        navigate('/dashboard');
       }
     });
 

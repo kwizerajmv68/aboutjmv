@@ -6,25 +6,25 @@ const AdminSidebar = () => {
     <aside className="sidebar">
       <div className="sidebar-logo">JMV ADMIN</div>
       <nav className="sidebar-nav">
-        <NavLink to="/admin/dashboard" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
+        <NavLink to="/dashboard" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
           DASHBOARD
         </NavLink>
-        <NavLink to="/admin/videos" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
+        <NavLink to="/videos" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
           VIDEOS
         </NavLink>
-        <NavLink to="/admin/graphics" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
+        <NavLink to="/graphics" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
           GRAPHICS
         </NavLink>
-        <NavLink to="/admin/scriptures" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
+        <NavLink to="/scriptures" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
           SCRIPTURES
         </NavLink>
-        <NavLink to="/admin/about" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
+        <NavLink to="/about" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
           ABOUT US
         </NavLink>
-        <NavLink to="/admin/bookings" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
+        <NavLink to="/bookings" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
           BOOKINGS
         </NavLink>
-        <NavLink to="/admin/settings" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
+        <NavLink to="/settings" className={({ isActive }) => isActive ? "sidebar-link active" : "sidebar-link"}>
           SETTINGS
         </NavLink>
       </nav>

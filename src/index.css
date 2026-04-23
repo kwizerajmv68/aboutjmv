@@ -1,11 +1,11 @@
 :root {
-  --primary: #D4AF37; /* Gold */
-  --primary-hover: #C5A021; /* Darker Gold */
+  --primary: #ff7b00; /* New Gold */
+  --primary-hover: #e66e00; /* Darker Gold */
   --bg-dark: #000000; /* Black */
   --bg-card: #111111; /* Very Dark Gray/Black */
   --text-main: #ffffff; /* White */
   --text-muted: #a0a0a0; /* Muted White/Gray */
-  --accent: #FFD700; /* Bright Gold */
+  --accent: #ff7b00; /* New Gold */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
