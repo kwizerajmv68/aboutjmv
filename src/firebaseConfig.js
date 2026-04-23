@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Replace these with your actual Firebase project configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyC0YUB9Z-l66UCi5HyryMjUKywbBp2Pcos",
   authDomain: "aboutjmv.firebaseapp.com",
   projectId: "aboutjmv",
   storageBucket: "aboutjmv.firebasestorage.app",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  messagingSenderId: "849884978031",
+  appId: "1:849884978031:web:9c8b40db5bec13416a269a",
+  measurementId: "G-K7CECZ3887"
 };
 
 const app = initializeApp(firebaseConfig);
