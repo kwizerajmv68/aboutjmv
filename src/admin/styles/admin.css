@@ -1,8 +1,8 @@
 .admin-container {
   display: flex;
   min-height: 100vh;
-  background: #f8fafc;
-  color: #1e293b;
+  background: #000000;
+  color: #ffffff;
 }
 
 .admin-main {
@@ -19,7 +19,8 @@
 /* Sidebar */
 .sidebar {
   width: 260px;
-  background: #0f172a;
+  background: #000000;
+  border-right: 1px solid rgba(212, 175, 55, 0.2);
   color: white;
   display: flex;
   flex-direction: column;
@@ -56,12 +57,13 @@
 
 /* Admin Navbar */
 .admin-navbar {
-  background: white;
+  background: #111111;
+  color: #ffffff;
   padding: 1rem 2rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .user-info {
@@ -83,11 +85,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0f172a;
+  background: #000000;
 }
 
 .login-card {
-  background: white;
+  background: #111111;
+  color: #ffffff;
   padding: 3rem;
   border-radius: 12px;
   width: 100%;
@@ -115,7 +118,9 @@
 .form-group input {
   width: 100%;
   padding: 0.8rem 1rem;
-  border: 1px solid #e2e8f0;
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 8px;
   font-family: inherit;
 }
@@ -123,8 +128,8 @@
 .btn-auth {
   width: 100%;
   padding: 1rem;
-  background: #6366f1;
-  color: white;
+  background: var(--primary);
+  color: #000000;
   border-radius: 8px;
   font-weight: 600;
   margin-top: 1rem;
@@ -168,14 +173,16 @@
 }
 
 .stat-card {
-  background: white;
+  background: #111111;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);
 }
 
 .settings-form {
-  background: white;
+  background: #111111;
+  color: #ffffff;
   padding: 2.5rem;
   border-radius: 12px;
   max-width: 800px;

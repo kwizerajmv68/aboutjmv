@@ -1,11 +1,11 @@
 :root {
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --bg-dark: #0f172a;
-  --bg-card: #1e293b;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent: #f59e0b;
+  --primary: #D4AF37; /* Gold */
+  --primary-hover: #C5A021; /* Darker Gold */
+  --bg-dark: #000000; /* Black */
+  --bg-card: #111111; /* Very Dark Gray/Black */
+  --text-main: #ffffff; /* White */
+  --text-muted: #a0a0a0; /* Muted White/Gray */
+  --accent: #FFD700; /* Bright Gold */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
