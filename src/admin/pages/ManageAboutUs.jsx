@@ -6,7 +6,7 @@ const ManageAboutUs = () => {
   const [content, setContent] = useState({
     title: "About Our Studio",
     name: "KWIZERA Jean Marie Vianney",
-    imageUrl: "https://i.postimg.cc/zBSTNcSz/MG-9694.png",
+    imageUrl: "https://drive.google.com/uc?export=view&id=1GU71KVden00DMk-DI1Sk-m5G9Ki9XUaE",
     description: "We are a creative team dedicated to excellence.",
     mission: "To inspire and create.",
     vision: "To be the leading creative hub."

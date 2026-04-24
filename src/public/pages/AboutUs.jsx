@@ -37,7 +37,7 @@ const AboutUs = () => {
             border: '1px solid rgba(255,255,255,0.1)'
           }}>
             <img 
-              src={content.imageUrl || "https://i.postimg.cc/zBSTNcSz/MG-9694.png"} 
+              src={content.imageUrl || "https://drive.google.com/uc?export=view&id=1GU71KVden00DMk-DI1Sk-m5G9Ki9XUaE"} 
               alt={content.name} 
               style={{width:'100%', display:'block', filter: 'grayscale(20%)'}}
             />
