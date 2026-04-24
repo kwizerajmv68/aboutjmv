@@ -8,12 +8,18 @@ const Home = () => {
     title: "JMV PORTFOLIO",
     subtitle: "Professional Video Production & Graphic Design"
   });
+  const [about, setAbout] = useState({ name: "" });
   const [recentWorks, setRecentWorks] = useState([]);
 
   useEffect(() => {
     // Hero data
     const unsubHero = onSnapshot(doc(db, "settings", "hero"), (doc) => {
       if (doc.exists()) setHero(doc.data());
+    });
+
+    // About data (to get the name)
+    const unsubAbout = onSnapshot(doc(db, "pages", "about"), (doc) => {
+      if (doc.exists()) setAbout(doc.data());
     });
 
     // Recent works (mix of graphics and videos)
@@ -40,8 +46,20 @@ const Home = () => {
   return (
     <div className="home-container">
       <section className="hero">
-        <h1 style={{color: 'var(--primary)', textTransform: 'uppercase'}}>{hero.title}</h1>
-        <p>{hero.subtitle}</p>
+        {about.name && (
+          <span style={{
+            color: 'var(--primary)', 
+            fontSize: '1.2rem', 
+            fontWeight: '600', 
+            letterSpacing: '3px',
+            marginBottom: '1rem',
+            display: 'block'
+          }}>
+            {about.name.toUpperCase()}
+          </span>
+        )}
+        <h1 style={{color: '#fff', textTransform: 'uppercase', fontSize: '4rem'}}>{hero.title}</h1>
+        <p style={{maxWidth: '800px', margin: '1rem auto 2rem'}}>{hero.subtitle}</p>
         <Link to="/book" className="btn-primary">GET STARTED</Link>
       </section>
 

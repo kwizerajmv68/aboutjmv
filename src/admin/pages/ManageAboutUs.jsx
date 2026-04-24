@@ -5,6 +5,8 @@ import { db } from '../../firebaseConfig';
 const ManageAboutUs = () => {
   const [content, setContent] = useState({
     title: "About Our Studio",
+    name: "KWIZERA Jean Marie Vianney",
+    imageUrl: "https://i.postimg.cc/zBSTNcSz/MG-9694.png",
     description: "We are a creative team dedicated to excellence.",
     mission: "To inspire and create.",
     vision: "To be the leading creative hub."
@@ -56,7 +58,15 @@ const ManageAboutUs = () => {
           <input name="title" value={content.title} onChange={handleChange} />
         </div>
         <div className="form-group">
-          <label>Main Description</label>
+          <label>Person Name</label>
+          <input name="name" value={content.name || ''} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label>Image URL</label>
+          <input name="imageUrl" value={content.imageUrl || ''} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label>Main Description (About Him)</label>
           <textarea 
             name="description" 
             value={content.description} 
