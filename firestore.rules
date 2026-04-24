@@ -2,8 +2,11 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     // Helper function to check if the user is logged in
+    // Helper function to check if the user is the authorized admin
     function isAdmin() {
-      return request.auth != null;
+      return request.auth != null && 
+             request.auth.token.email == 'kwizerajmv68@gmail.com' && 
+             request.auth.token.email_verified == true;
     }
 
     // Publicly readable content: Settings, Pages, and Portfolio items
@@ -34,7 +37,8 @@ service cloud.firestore {
 
     // Bookings: Anyone can submit a booking, but only Admin can see or edit them
     match /bookings/{bookingId} {
-      allow create: if true;
+      allow create: if request.resource.data.name is string && 
+                      request.resource.data.email is string;
       allow read, update, delete: if isAdmin();
     }
   }
