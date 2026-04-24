@@ -36,11 +36,19 @@ const AboutUs = () => {
             boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
             border: '1px solid rgba(255,255,255,0.1)'
           }}>
-            <img 
-              src={content.imageUrl || "https://drive.google.com/uc?export=view&id=1GU71KVden00DMk-DI1Sk-m5G9Ki9XUaE"} 
-              alt={content.name} 
-              style={{width:'100%', display:'block', filter: 'grayscale(20%)'}}
-            />
+            {content.imageUrl && content.imageUrl.trim().startsWith('<') ? (
+              <div 
+                className="about-image-embed" 
+                dangerouslySetInnerHTML={{ __html: content.imageUrl }} 
+                style={{ width: '100%' }}
+              />
+            ) : (
+              <img 
+                src={content.imageUrl || "https://drive.google.com/uc?export=view&id=1GU71KVden00DMk-DI1Sk-m5G9Ki9XUaE"} 
+                alt={content.name} 
+                style={{width:'100%', display:'block', filter: 'grayscale(20%)'}}
+              />
+            )}
           </div>
         </div>
 

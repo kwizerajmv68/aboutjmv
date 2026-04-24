@@ -62,8 +62,14 @@ const ManageAboutUs = () => {
           <input name="name" value={content.name || ''} onChange={handleChange} />
         </div>
         <div className="form-group">
-          <label>Image URL</label>
-          <input name="imageUrl" value={content.imageUrl || ''} onChange={handleChange} />
+          <label>Image Link or HTML Embed Code</label>
+          <textarea 
+            name="imageUrl" 
+            value={content.imageUrl || ''} 
+            onChange={handleChange}
+            style={{width:'100%', height:'80px', padding:'1rem', borderRadius:'8px', border:'1px solid #e2e8f0'}}
+            placeholder="Paste direct link or HTML embed code (e.g. from ImgBB)"
+          />
         </div>
         <div className="form-group">
           <label>Main Description (About Him)</label>
